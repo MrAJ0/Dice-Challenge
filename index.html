@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Dice challenge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dice challenge</h1>
+      <div class="dice">
+        <div>
+            <h2>Player 1</h2>
+            <img id="player1" src="img/dice1.png" alt="img" />
+          </div>
+          <div>
+            <h2>Player 2</h2>
+            <img id="player2" src="img/dice2.png" alt="img" />
+          </div>
+      </div>
+      <div>
+        <button  onclick="btn()">Play</button>
+      </div>
+    </div>
+    <script>
+        btn=()=>{
+            const dice1= Math.floor(Math.random()*6)+1;
+            const player1Dice= `img/dice${dice1}.png`;
+            document.getElementById('player1').setAttribute('src', player1Dice);
+    
+            const dice2= Math.floor(Math.random()*6)+1;
+            const player2Dice= `img/dice${dice2}.png`;
+            document.getElementById('player2').setAttribute('src',player2Dice);
+           
+            if(dice1>dice2){
+                {document.querySelector('h1').innerHTML="Player1 win🤣"};
+            }
+            else if(dice1<dice2){
+                {document.querySelector('h1').innerHTML="Player2 win😂"};
+            }
+            else{
+                {document.querySelector('h1').innerHTML="Draw!"};
+            }
+        }
+        btn();
+      </script>
+  </body>
+ 
+</html>
